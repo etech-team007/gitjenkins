@@ -26,6 +26,16 @@ pipeline{
 				sh 'uname -r'
 			}
 		}
+		stage('6-test'){
+			steps{
+				sh 'cat /etc/os-release'
+			}
+		}
+		stage('7-approval'){
+			steps{
+				input message: 'Do you want to approve this?', ok: 'Yes'
+			}
+		}
 	}
 }
 
