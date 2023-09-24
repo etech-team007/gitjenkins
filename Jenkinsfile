@@ -16,6 +16,11 @@ pipeline{
 				sh 'lscpu'
 			}
 		}
+		stage('4-build'){
+			steps{
+				sh 'free -m'
+			}
+		}
 	}
 }
 
