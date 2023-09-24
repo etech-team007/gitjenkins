@@ -21,11 +21,6 @@ pipeline{
 				sh 'free -m'
 			}
 		}
-		stage('5-deploy'){
-			steps{
-				sh 'uname -r'
-			}
-		}
 	}
 }
 
