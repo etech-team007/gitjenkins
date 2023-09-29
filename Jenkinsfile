@@ -6,6 +6,7 @@ pipeline{
 				checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'team7 git-id', url: 'https://github.com/etech-team007/gitjenkins.git']])
 			}
 		}
+		stage ('paralell'){
 		parallel{
 			stage('2-artifactbuild'){
 			steps{
@@ -16,6 +17,7 @@ pipeline{
 			steps{
 				sh 'lscpu'
 			}
+		}
 		}
 		}
 		stage('4-build'){
