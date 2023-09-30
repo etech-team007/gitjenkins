@@ -1,5 +1,7 @@
 pipeline{
-	agent any 
+	agent {
+		label 'slave1'
+	}
 	stages{
 		stage('1-clonecode'){
 			steps{
@@ -21,6 +23,9 @@ pipeline{
 		}
 		}
 		stage('4-build'){
+			agent {
+				label 'slave2'
+			}
 			steps{
 				sh 'free -m'
 			}
@@ -31,6 +36,9 @@ pipeline{
 			}
 		}
 		stage('6-test'){
+			agent {
+				label 'slave1'
+			}	
 			steps{
 				sh 'cat /etc/os-release'
 			}
