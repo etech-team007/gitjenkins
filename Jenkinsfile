@@ -43,9 +43,9 @@ pipeline{
 				sh 'cat /etc/os-release'
 			}
 		}
-		stage('7-approval'){
+		stage('7 security check'){
 			steps{
-				input message: 'Do you want to approve this?', ok: 'Yes'
+				echo 'end of section'
 			}
 		}
 	}
